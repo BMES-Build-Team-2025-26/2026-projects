@@ -12,7 +12,11 @@ void draw() {
 
 }
 
-
+/***********************
+DO NOT MODIFY
+void serialEvent: reads data from Serial port
+Reads int input(formatted as x1,x2,x3,x4) into serialValues array
+***********************/
 void serialEvent(Serial p) {
   String rawData = p.readStringUntil('\n');
   if (rawData != null) {
