@@ -1,7 +1,7 @@
 import processing.serial.*;
 
 Serial myPort;
-int[] serialValues;
+float[] serialValues;
 
 void setup() {
   myPort = new Serial(this, "COMX", 115200); //replace COMX with your serial port
@@ -22,8 +22,8 @@ void serialEvent(Serial p) {
   if (rawData != null) {
     String inData = trim(rawData);
     String[] list = split(inData, ',');
-    serialValues = new int[list.length];
+    serialValues = new float[list.length];
     for (int i = 0; i < list.length; i++) {
-      serialValues[i] = int(list[i]);
+      serialValues[i] = float(list[i]);
     }
 }
